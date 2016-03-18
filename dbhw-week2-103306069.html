@@ -1,226 +1,238 @@
 <html>
 <head>
- <meta  charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<meta charset="utf-8">
+<title>Timer</title>
 </head>
 <style>
+body{
+width: 100%;
+height: 100%;
+background-image: url(http://static.flickr.com/32/49876687_68cd736add_o.jpg);
+background-size: 120%;
+background-repeat: no-repeat;
+}
 .timer-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #031;
-  color: #fff;
+position: absolute;
+top : 0;
+left: 30%;
+width: 100vh;
+height: 100vh;
+background-color: transparent;
+color : #065;
 }
-
-.timer-wrapper > ul {
-  height: 100%;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
+.timer-wrapper > ul{
+height: 80%;
+width: 100%;
+display: block;
+margin: 0 auto;
 }
-
-.timer-wrapper > ul > li {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  background: transparent;
-  border: 10px solid rgba(23, 246, 251, 1.0);
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-radius: 500px;
-  transition: all 0.5s ease;
+.timer-wrapper > ul >li{
+position: absolute;
+left: 50%;
+top: 61%;
+display: block;
+background: transparent;
+border: 10px solid rgba(120,210,190, 1);
+border-left-color: transparent;
+border-right-color: transparenttransparent;
+border-radius: 800px;
+transition: all 0.5s ease;
 }
-
-.timer-wrapper > ul > li:last-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 20;
-  width: 200px;
-  height: 100px;
-  margin-left: -110px;
-  margin-top: -110px;
-  padding: 70px 0px 30px;
-  background-color: rgba(8, 8, 8, 1.0);
-  border: 10px solid rgba(8, 8, 8, 1.0);
-  border-radius: 200px;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
-  box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.5);
-  animation: pulseShadow 5s infinite linear;
+.timer-wrapper > ul >li:last-child {
+position: absolute;
+left: 60%;
+top: 60%;
+z-index: 20;
+width: 200px;
+height: 100px;
+margin-left: -110px;
+margin-top: -110px;
+padding: 70px 0px 30px;
+background-color: transparent;
+border: 10px solid rgba(8,10,8,1);
+border-radius: 200px;
+text-shadow: 2px 2px 0px rgba(0,0,0,1);
+box-shadow: 0px 0px 30px rgba(23,246,251, 0.5);
+animation: pulseShadow 1s infinite linear;
 }
-
-.timer-wrapper > ul > li:last-child::after {
-  content: '';
-  border: 3px dotted rgba(22, 42, 43, 1.0);
-  border-radius: 200px;
-  width: 200px;
-  height: 200px;
-  display: block;
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 1.0);
+.timer-wrapper > ul >li:last-child:after{
+content:'';
+border: 3px dotted rgba(130,130,113,1.0);
+border-radius: 100px;
+width: 250px;
+height: 200px;
+display: block;
+position: absolute;
+top:0px;
+left:-30px;
+background-color: transparent;
+box-shadow: inset 0px 0px 30px rgba(0,0,0,1.0);
 }
-
-.timer-wrapper > ul > li:nth-child(4) {
-  margin-left: -170px;
-  margin-top: -170px;
-  z-index: 1;
-  width: 330px;
-  height: 330px;
-  border-width: 5px;
-  border-style: solid;
-  box-shadow: inset 0px 0px 25px rgba(23, 246, 251, 1.0);
-  animation: spinBG3 8s infinite linear;
+.timer-wrapper > ul >li:first-child{
+margin-left: -100px;
+margin-top: -125px;
+z-index: 2;
+width: 220px;
+height: 220px;
+border-width: 7px;
+animation: spinBG 8s infinite linear;
 }
-
-.timer-wrapper > ul > li:nth-child(3) {
-  margin-left: -150px;
-  margin-top: -150px;
-  z-index: 1;
-  width: 296px;
-  height: 296px;
-  border-width: 2px;
-  box-shadow: inset 0px 0px 25px rgba(23, 246, 251, .25);
-  animation: spinBG 12s infinite linear;
+.timer-wrapper > ul >li:nth-child(2){
+margin-left: -80px;
+margin-top: -140px;
+z-index: 1;
+width: 250px;
+height: 250px;
+border-width: 2px;
+border-style: dotted;
+box-shadow: 0px 0px 20px rgba(23,246,251, .5);
+animation: spinBG2 4s infinite linear;
 }
-
-.timer-wrapper > ul > li:nth-child(2) {
-  margin-left: -137px;
-  margin-top: -137px;
-  z-index: 1;
-  width: 270px;
-  height: 270px;
-  border-width: 2px;
-  border-style: dotted;
-  box-shadow: 0px 0px 20px rgba(23, 246, 251, .5);
-  animation: spinBG2 2s infinite linear;
+.timer-wrapper > ul >li:nth-child(3){
+margin-left: -120px;
+margin-top: -150px;
+z-index: 1;
+width: 260px;
+height: 260px;
+border-width: 2px;
+box-shadow: inset 0px 0px 25px rgba(23,246,251, .25);
+animation: spinBG 10s infinite linear;
 }
-
-.timer-wrapper > ul > li:first-child {
-  margin-left: -130px;
-  margin-top: -130px;
-  z-index: 2;
-  width: 240px;
-  height: 240px;
-  border-width: 10px;
-  animation: spinBG 5s infinite linear;
-}
-
 #num {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 200;
-  margin-left: -9%;
-  margin-top: -7%;
-  font-size: 120px;
+position: absolute;
+top : 50%;
+left : 50%;
+z-index: 200;
+margin-left: -12%;
+margin-top: -15%;
+font-size: 120px;
+    color:#006;
 }
-
-
 /*-------------------------------------------
-		 Animations
-		-------------------------------------------*/
-
-@keyframes pulseGlow {
-  0% {
-    text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
-  }
-  50% {
-    text-shadow: 0px 0px 40px rgba(23, 246, 251, 0.5);
-  }
-  100% {
-    text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
-  }
+Animations
+-------------------------------------------*/
+@keyframes pulseGlow{
+0%  {text-shadow: 0px 0px 20px rgba(23,246,251, 0.75);}
+50% {text-shadow: 0px 0px 40px rgba(23,246,251, 0.5); }
+100%{text-shadow: 0px 0px 20px rgba(23,246,251, 0.75);}
+}
+@keyframes pulseShadow{
+0%  {box-shadow: 0px 0px 30px rgba(255,0,0,0.7);}
+20%  {box-shadow: 0px 0px 30px rgba(255,0,0,0.4);}
+40% {box-shadow: 0px 0px 30px rgba(23,246,251, 0.5);}
+60%  {box-shadow: 0px 0px 30px rgba(23,246,251, 0.7);}
+80%{box-shadow: 0px 0px 30px rgba(23,246,251, 0.25);}
+100%  {box-shadow: 0px 0px 30px rgba(255,0,0,0.4);}
+}
+@keyframes spinBG{
+0%  {transform: rotate(0deg);}
+100%{transform: rotate(360deg);}
+}
+@keyframes spinBG2{
+0%{
+transform: rotate(180deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.4);
+}
+20%{
+transform: rotate(360deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.7);
+}
+40%{
+transform: rotate(200deg);
+box-shadow: 0px 0px 20px rgba(255,0,0, 0.4);
+}
+60%{
+transform: rotate(260deg);
+box-shadow: 0px 0px 1px rgba(0,246,251, 0.7);
+}
+80%{
+transform: rotate(200deg);
+box-shadow: 0px 0px 1px rgba(0,246,251, 0.5);
+}
+100%{
+transform: rotate(180deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.7);
+}
+}
+@keyframes spinBG3{
+0%{
+transform: rotate(180deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.4);
+}
+50%{
+transform: rotate(180deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.4);
+}
+100%{
+transform: rotate(180deg);
+box-shadow: 0px 0px 1px rgba(255,0,0, 0.4);
+}
 }
 
-@keyframes pulseShadow {
-  0% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
-  }
-  50% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.75);
-  }
-  100% {
-    box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
-  }
-}
-
-@keyframes spinBG {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spinBG2 {
-  0% {
-    transform: rotate(360deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
-  }
-  50% {
-    transform: rotate(180deg);
-    box-shadow: 0px 0px 20px rgba(23, 246, 251, 0.5);
-  }
-  100% {
-    transform: rotate(0deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
-  }
-}
-
-@keyframes spinBG3 {
-  0% {
-    transform: rotate(180deg);
-    box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.1);
-  }
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-180deg);
-  }
-}
-
-</style>
+#top1 , #top2{
+height: 30%;
+font-size:500%;
+font-style: oblique;
+text-align: center;
+}</style>
 <body>
+<div>
+<p id="top1" class="bg-primary"></p>
 <div class="timer-wrapper">
-  <span id="num">60</span>
+  <p id="top2" class="bg-primary">60s Timer</p>
+  <span id="num">61</span>
   <ul>
     <li></li>
     <li></li>
     <li></li>
     <li></li>
-    <li></li>
+
   </ul>
+  <p class="text-center">
+    <button type="button" class="btn btn-primary" onclick="pause()">STOP</button>
+    <button type="button" class="btn btn-primary" onclick="resume()">PLAY</button>
+  </p>
 </div>
 </body>
 <script>
+     var T;
+     var test=0;
 function minus() {
-  if (document.getElementById("num")) {
-    var curr = parseInt(document.getElementById("num").innerHTML);
-  }
+if (document.getElementById("num")) {
+var curr = parseInt(document.getElementById("num").innerHTML);
+}
+if(curr && curr<=60 ) {
+if (curr<=10){
+document.getElementById("num").innerHTML = "0"+( curr - 1);
 
-  if (curr && curr <= 60) {
-
-    if (curr <= 10) {
-      document.getElementById("num").innerHTML = "0" + (curr - 1);
-    } else {
-      document.getElementById("num").innerHTML = curr - 1;
-    }
-  } else {
-    document.getElementById("num").innerHTML = 60;
-  }
-
-  setTimeout(function() {
-    minus();
-  }, 1000);
-};
+} else {
+document.getElementById("num").innerHTML = curr - 1;
+}
+} else {
+document.getElementById("num").innerHTML = 60;
+}
+T=setTimeout(function() {
 minus();
-
-</script>
+}, 1000);
+};
+     minus();
+   function pause() {
+      clearTimeout(T);
+      test=1;
+    }
+    function resume() {
+       if(test==1){
+       minus();
+       test=0;
+     }
+    }</script>
 </html>
